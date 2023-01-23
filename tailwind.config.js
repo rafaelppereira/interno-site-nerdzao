@@ -25,6 +25,7 @@ module.exports = {
 
       backgroundImage: {
         banner: "url(/banner-background.png)",
+        about: "url(/about-background.png)",
       },
     },
   },

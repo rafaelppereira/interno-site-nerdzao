@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import Head from "next/head";
 import Link from "next/link";
-import { Star } from "phosphor-react";
+import { ArrowUpRight, Copy, Star } from "phosphor-react";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <section className="bg-banner min-h-screen pt-24 bg-fixed flex flex-col items-center justify-center">
+      <section className="bg-banner bg-center bg-cover bg-no-repeat min-h-screen pt-24 bg-fixed flex flex-col items-center justify-center">
         <span className="bg-gray-800 text-white px-4 py-2 rounded-full flex items-center justify-center gap-2">
           <Star size={19} weight="fill" />
           Exclusivo
@@ -37,19 +37,66 @@ export default function Home() {
         </Link>
       </section>
 
-      <div className="bg-gradient-to-r from-pink-500 to-purple-500 max-w-6xl mx-auto w-full h-10 relative -top-5 rounded-full " />
+      <section className="bg-about bg-top bg-cover bg-no-repeat">
+        <div className="bg-gradient-to-r from-pink-500 to-purple-500 max-w-6xl mx-auto w-full h-10 relative -top-5 rounded-full " />
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+        <div className="max-w-6xl mx-auto px-8 py-20 flex flex-col">
+          <div>
+            <h1 className="text-white text-3xl lg:text-4xl font-medium">
+              Sobre o evento
+            </h1>
+            <p className="text-white mt-4 font-light text-md lg:text-lg">
+              A comunidade Nerdzão + a Câmara Municipal de São Paulo vão
+              realizar um evento incrível para a comunidade de tecnologia de São
+              Paulo. Será um sábado inteiro com 2 trilhas e diversos
+              palestrantes trazendo assuntos relevantes
+              como:JavaScript,TypeScript, NodeJS, GO, Inteligencia Artifical,
+              Segurança, Frameworks JS, PHP, .NET, Python, Desenvolvimento
+              Mobile, Testes de Software, DevOps e Big Data.
+            </p>
+          </div>
+
+          <div className="flex flex-col md:items-end mt-20">
+            <h1 className="text-white  text-3xl lg:text-4xl font-medium">
+              Localização do Nerdzão
+            </h1>
+
+            <div className="relative w-full mt-10 overflow-hidden rounded-2xl ring-4 ring-pink-500">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d58519.94008533829!2d-46.641075!3d-23.550614!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b4970d9095ec081!2sC%C3%A2mara%20Municipal%20de%20S%C3%A3o%20Paulo%20-%20Pal%C3%A1cio%20Anchieta!5e0!3m2!1spt-BR!2sbr!4v1674507011553!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="650"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+
+              <div className="bg-pink-500 p-5 text-white font-medium flex flex-col lg:flex-row items-center justify-between">
+                <button
+                  title="Clique para copiar o endereço"
+                  type="button"
+                  className="relative group hidden lg:block"
+                >
+                  Câmara Municipal de São Paulo - Palácio Anchieta
+                  <div className="bg-gray-800 group-hover:scale-100 origin-bottom-left transition-all scale-0 absolute left-4 -top-10 z-30 px-3 text-sm py-2 rounded-full font-light">
+                    Copiar o endereço
+                    <div className="block w-3 h-3 absolute left-4 -bottom-1 rotate-45 bg-gray-800"></div>
+                  </div>
+                </button>
+
+                <div className="flex items-center gap-4">
+                  <Link
+                    className="bg-gray-800 rounded-full px-4 py-2 text-sm font-light flex items-center justify-center gap-2 hover:brightness-90 transition-all"
+                    href="https://www.google.com/maps?ll=-23.550614,-46.641075&z=12&t=m&hl=pt-BR&gl=BR&mapclient=embed&cid=10036677322039279745"
+                  >
+                    <ArrowUpRight size={20} />
+                    Abrir no mapa
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
