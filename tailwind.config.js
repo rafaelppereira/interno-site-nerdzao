@@ -17,6 +17,10 @@ module.exports = {
           500: "#8213F1",
         },
 
+        gray: {
+          opacity: "rgba(25, 25, 25, 0.95)",
+        },
+
         linear: {
           purpletopink:
             "linear-gradient(90.06deg, #FF668A -8.46%, #8213F1 115.57%);",

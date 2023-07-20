@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-sans
+  @apply font-sans bg-gray-900
 }
 
 ::selection {
@@ -16,4 +16,14 @@ body {
 
 ::-webkit-scrollbar-thumb {
   @apply bg-pink-500
+}
+
+.swiper-pagination-bullet-active {
+  background-color: red;
+}
+
+.swiper-pagination-bullet {
+  background: rgb(22, 15, 15);
+  width: 0.6rem;
+  height: 0.6rem;
 }

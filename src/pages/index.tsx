@@ -1,7 +1,10 @@
-import { Header } from "@/components/Header";
+import { Divider } from "@/components/Divider";
 import Head from "next/head";
 import Link from "next/link";
-import { ArrowUpRight, Copy, Star } from "phosphor-react";
+import { ArrowUpRight, Star } from "phosphor-react";
+
+import { Autoplay, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Home() {
   return (
@@ -22,7 +25,7 @@ export default function Home() {
         <h1 className="text-pink-500 text-5xl md:text-6xl lg:text-7xl font-bold mt-7">
           Nerdzão Day
         </h1>
-        <h2 className="text-white text-5xl md:text-6xl lg:text-7xl mt-5 font-bold">
+        <h2 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-5 font-bold">
           Super edição 2023
         </h2>
 
@@ -31,14 +34,15 @@ export default function Home() {
         </p>
 
         <Link href="/incrições">
-          <div className="mt-14 bg-gray-800 text-white px-6 py-3 rounded-full animate-bounce hover:ring-4 hover:ring-pink-500 transition-all">
+          <div className="mt-14 bg-pink-500 text-white flex items-center gap-[7px] px-6 py-3 rounded-full animate-bounce hover:ring-4 hover:ring-pink-700 transition-all">
+            <ArrowUpRight size={22} />
             Increver-se agora
           </div>
         </Link>
       </section>
 
       <section className="bg-about bg-top bg-cover bg-no-repeat">
-        <div className="bg-gradient-to-r from-pink-500 to-purple-500 max-w-6xl mx-auto w-full h-10 relative -top-5 rounded-full " />
+        <Divider />
 
         <div className="max-w-6xl mx-auto px-8 py-20 flex flex-col">
           <div>
@@ -65,7 +69,7 @@ export default function Home() {
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d58519.94008533829!2d-46.641075!3d-23.550614!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b4970d9095ec081!2sC%C3%A2mara%20Municipal%20de%20S%C3%A3o%20Paulo%20-%20Pal%C3%A1cio%20Anchieta!5e0!3m2!1spt-BR!2sbr!4v1674507011553!5m2!1spt-BR!2sbr"
                 width="100%"
-                height="650"
+                className="h-[400px] lg:h-[500px]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
@@ -96,6 +100,483 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="w-full bg-gray-opacity bg-about bg-top bg-cover bg-no-repeat">
+        <Divider />
+
+        <div className="max-w-6xl mx-auto px-8 py-20 flex flex-col">
+          <div className="bg-gray-200/10 py-10 px-9 rounded-lg flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl text-white font-semibold">
+                Palestrantes
+              </h1>
+              <p className="mt-1 text-white/80 font-light max-w-xs">
+                Essas pessoas incríveis que você terá o prazer de conhecer
+              </p>
+            </div>
+
+            <span className="bg-gray-800 text-white  rounded-lg flex items-center justify-center gap-2">
+              <div className="bg-pink-500 h-12 w-12 flex items-center justify-center rounded-l-lg">
+                <figure>
+                  <img
+                    className="w-10"
+                    src="/favicon.svg"
+                    alt="Logo do Nerdzão Day"
+                  />
+                </figure>
+              </div>
+              <div className="px-4">7 palestrantes</div>
+            </span>
+          </div>
+
+          {/* <div className="mt-10 p-4 rounded-lg bg-gray-800 w-full text-white grid grid-cols-5 gap-5 text-sm">
+            <button
+              type="button"
+              className="bg-pink-500 w-full h-10 rounded-full hover:brightness-90 transition-all"
+            >
+              Desenvolvimento
+            </button>
+            <button
+              type="button"
+              className="bg-gray-700 w-full h-10 rounded-full hover:brightness-90 transition-all"
+            >
+              Negócios
+            </button>
+
+            <button
+              type="button"
+              className="bg-gray-700 w-full h-10 rounded-full hover:brightness-90 transition-all"
+            >
+              Inovação
+            </button>
+
+            <button
+              type="button"
+              className="bg-gray-700 w-full h-10 rounded-full hover:brightness-90 transition-all"
+            >
+              Futuro
+            </button>
+
+            <button
+              type="button"
+              className="bg-gray-700 w-full h-10 rounded-full hover:brightness-90 transition-all"
+            >
+              Resultados
+            </button>
+          </div> */}
+
+          <div className="mt-5 ">
+            <Swiper
+              className="w-full mt-2"
+              spaceBetween={30}
+              slidesPerView={3}
+              modules={[Autoplay, Pagination]}
+              autoplay={{
+                delay: 8000,
+                disableOnInteraction: false,
+              }}
+              pagination
+            >
+              <SwiperSlide>
+                <div className="overflow-hidden rounded-lg w-full group   transition-all border-4 border-pink-500">
+                  <div className="w-full max-h-[400px] overflow-hidden ">
+                    <figure>
+                      <img
+                        src="https://github.com/rafaelppereira.png"
+                        alt="Rafael Pereira"
+                        className="w-full max-h-[400px] object-cover group-hover:scale-110 transition-all"
+                      />
+                    </figure>
+                  </div>
+
+                  <div className="bg-gray-800 p-5 text-white">
+                    <h1 className="text-xl">Rafael Pereira</h1>
+
+                    <p className="text-sm font-light text-white/70">
+                      Desenvolvedor full-stack pleno Resolv.ai
+                    </p>
+
+                    <div className="flex items-center gap-2 flex-wrap mt-2">
+                      <span className="bg-pink-500 text-xs px-2 py-1 rounded-full mt-2 inline-block">
+                        Palestrante
+                      </span>
+
+                      <span className="bg-pink-500 text-xs px-2 py-1 rounded-full mt-2 inline-block">
+                        Developer
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="overflow-hidden rounded-lg w-full group   transition-all border-4 border-pink-500">
+                  <div className="w-full max-h-[400px] overflow-hidden ">
+                    <figure>
+                      <img
+                        src="https://github.com/diego3g.png"
+                        alt="Rafael Pereira"
+                        className="w-full max-h-[400px] object-cover group-hover:scale-110 transition-all"
+                      />
+                    </figure>
+                  </div>
+
+                  <div className="bg-gray-800 p-5 text-white">
+                    <h1 className="text-xl">Rafael Pereira</h1>
+
+                    <p className="text-sm font-light text-white/70">
+                      Desenvolvedor full-stack pleno Resolv.ai
+                    </p>
+
+                    <div className="flex items-center gap-2 flex-wrap mt-2">
+                      <span className="bg-pink-500 text-xs px-2 py-1 rounded-full mt-2 inline-block">
+                        Palestrante
+                      </span>
+
+                      <span className="bg-pink-500 text-xs px-2 py-1 rounded-full mt-2 inline-block">
+                        Developer
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="overflow-hidden rounded-lg w-full group   transition-all border-4 border-pink-500">
+                  <div className="w-full max-h-[400px] overflow-hidden ">
+                    <figure>
+                      <img
+                        src="https://github.com/lucasdpassos.png"
+                        alt="Rafael Pereira"
+                        className="w-full max-h-[400px] object-cover group-hover:scale-110 transition-all"
+                      />
+                    </figure>
+                  </div>
+
+                  <div className="bg-gray-800 p-5 text-white">
+                    <h1 className="text-xl">Rafael Pereira</h1>
+
+                    <p className="text-sm font-light text-white/70">
+                      Desenvolvedor full-stack pleno Resolv.ai
+                    </p>
+
+                    <div className="flex items-center gap-2 flex-wrap mt-2">
+                      <span className="bg-pink-500 text-xs px-2 py-1 rounded-full mt-2 inline-block">
+                        Palestrante
+                      </span>
+
+                      <span className="bg-pink-500 text-xs px-2 py-1 rounded-full mt-2 inline-block">
+                        Developer
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="overflow-hidden rounded-lg w-full group   transition-all border-4 border-pink-500">
+                  <div className="w-full max-h-[400px] overflow-hidden ">
+                    <figure>
+                      <img
+                        src="https://github.com/diglopes.png"
+                        alt="Rafael Pereira"
+                        className="w-full max-h-[400px] object-cover group-hover:scale-110 transition-all"
+                      />
+                    </figure>
+                  </div>
+
+                  <div className="bg-gray-800 p-5 text-white">
+                    <h1 className="text-xl">Rafael Pereira</h1>
+
+                    <p className="text-sm font-light text-white/70">
+                      Desenvolvedor full-stack pleno Resolv.ai
+                    </p>
+
+                    <div className="flex items-center gap-2 flex-wrap mt-2">
+                      <span className="bg-pink-500 text-xs px-2 py-1 rounded-full mt-2 inline-block">
+                        Palestrante
+                      </span>
+
+                      <span className="bg-pink-500 text-xs px-2 py-1 rounded-full mt-2 inline-block">
+                        Developer
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-gray-opacity bg-about bg-top bg-cover bg-no-repeat">
+        <Divider />
+
+        <div className="max-w-6xl mx-auto px-8 py-20 flex flex-col">
+          <div className="text-center text-white">
+            <h1 className="text-3xl">Nossa programação</h1>
+            <p className="mt-2 font-extralight text-white/70">
+              Confira o roteiro completo de todos <br /> os dias do maior
+              evento.
+            </p>
+          </div>
+          <div className="bg-gray-800 mt-20 p-10 rounded-3xl ">
+            <div className="grid grid-cols-5  gap-5">
+              <button
+                className="bg-pink-500 w-full py-2 rounded-full text-white hover:brightness-90 transition-all"
+                type="button"
+              >
+                Trilha 01
+              </button>
+              <button
+                className="bg-gray-600 w-full py-2 rounded-full text-white hover:brightness-90 transition-all"
+                type="button"
+              >
+                Trilha 02
+              </button>
+
+              <button
+                className="bg-gray-600 w-full py-2 rounded-full text-white hover:brightness-90 transition-all"
+                type="button"
+              >
+                Trilha 03
+              </button>
+
+              <button
+                className="bg-gray-600 w-full py-2 rounded-full text-white hover:brightness-90 transition-all"
+                type="button"
+              >
+                Trilha 04
+              </button>
+
+              <button
+                className="bg-gray-600 w-full py-2 rounded-full text-white hover:brightness-90 transition-all"
+                type="button"
+              >
+                Trilha 05
+              </button>
+            </div>
+
+            <div className="mt-10">
+              <div className="flex items-center">
+                <div className="border-b border-b-gray-600 text-white text-md font-light pr-10 h-20 flex flex-col justify-center border-r-4 border-r-pink-500">
+                  <h1>Dia 15/12/2023</h1>
+                  <span className="text-sm font-extralight opacity-60">
+                    das 15:00 às 16:00
+                  </span>
+                </div>
+
+                <div className="flex-1 border-b border-gray-600 pl-10 h-20 flex items-center text-white/80">
+                  <h1>Credenciamento</h1>
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div className="border-b border-b-gray-600 text-white text-md font-light pr-10 h-28 flex flex-col justify-center border-r-4 border-r-pink-500">
+                  <h1>Dia 15/12/2023</h1>
+                  <span className="text-sm font-extralight opacity-60">
+                    das 15:00 às 16:00
+                  </span>
+                </div>
+
+                <div className="flex-1 border-b border-gray-600 pl-10 h-28 flex items-center text-white/80">
+                  <h1>
+                    O foco é explicar de maneira humana o que precisamos buscar
+                    e focar para chegar em um nível de liderança na área de
+                    tecnologia (seja lá qual cargo for), não basta ser bom no
+                    técnico, precisa ter foco no pessoal e comportamental, desde
+                    o início a postura precisa ser diferente.
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div className="border-b border-b-gray-600 text-white text-md font-light pr-10 h-28 flex flex-col justify-center border-r-4 border-r-pink-500">
+                  <h1>Dia 15/12/2023</h1>
+                  <span className="text-sm font-extralight opacity-60">
+                    das 15:00 às 16:00
+                  </span>
+                </div>
+
+                <div className="flex-1 border-b border-gray-600 pl-10 h-28 flex items-center text-white/80">
+                  <h1>
+                    O foco é explicar de maneira humana o que precisamos buscar
+                    e focar para chegar em um nível de liderança na área de
+                    tecnologia (seja lá qual cargo for), não basta ser bom no
+                    técnico, precisa ter foco no pessoal e comportamental, desde
+                    o início a postura precisa ser diferente.
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div className="border-b border-b-gray-600 text-white text-md font-light pr-10 h-28 flex flex-col justify-center border-r-4 border-r-pink-500">
+                  <h1>Dia 15/12/2023</h1>
+                  <span className="text-sm font-extralight opacity-60">
+                    das 15:00 às 16:00
+                  </span>
+                </div>
+
+                <div className="flex-1 border-b border-gray-600 pl-10 h-28 flex items-center text-white/80">
+                  <h1>
+                    O foco é explicar de maneira humana o que precisamos buscar
+                    e focar para chegar em um nível de liderança na área de
+                    tecnologia (seja lá qual cargo for), não basta ser bom no
+                    técnico, precisa ter foco no pessoal e comportamental, desde
+                    o início a postura precisa ser diferente.
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div className="border-b border-b-gray-600 text-white text-md font-light pr-10 h-28 flex flex-col justify-center border-r-4 border-r-pink-500">
+                  <h1>Dia 15/12/2023</h1>
+                  <span className="text-sm font-extralight opacity-60">
+                    das 15:00 às 16:00
+                  </span>
+                </div>
+
+                <div className="flex-1 border-b border-gray-600 pl-10 h-28 flex items-center text-white/80">
+                  <h1>
+                    O foco é explicar de maneira humana o que precisamos buscar
+                    e focar para chegar em um nível de liderança na área de
+                    tecnologia (seja lá qual cargo for), não basta ser bom no
+                    técnico, precisa ter foco no pessoal e comportamental, desde
+                    o início a postura precisa ser diferente.
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div className="border-b border-b-gray-600 text-white text-md font-light pr-10 h-28 flex flex-col justify-center border-r-4 border-r-pink-500">
+                  <h1>Dia 15/12/2023</h1>
+                  <span className="text-sm font-extralight opacity-60">
+                    das 15:00 às 16:00
+                  </span>
+                </div>
+
+                <div className="flex-1 border-b border-gray-600 pl-10 h-28 flex items-center text-white/80">
+                  <h1>
+                    O foco é explicar de maneira humana o que precisamos buscar
+                    e focar para chegar em um nível de liderança na área de
+                    tecnologia (seja lá qual cargo for), não basta ser bom no
+                    técnico, precisa ter foco no pessoal e comportamental, desde
+                    o início a postura precisa ser diferente.
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div className="border-b border-b-gray-600 text-white text-md font-light pr-10 h-28 flex flex-col justify-center border-r-4 border-r-pink-500">
+                  <h1>Dia 15/12/2023</h1>
+                  <span className="text-sm font-extralight opacity-60">
+                    das 15:00 às 16:00
+                  </span>
+                </div>
+
+                <div className="flex-1 border-b border-gray-600 pl-10 h-28 flex items-center text-white/80">
+                  <h1>
+                    O foco é explicar de maneira humana o que precisamos buscar
+                    e focar para chegar em um nível de liderança na área de
+                    tecnologia (seja lá qual cargo for), não basta ser bom no
+                    técnico, precisa ter foco no pessoal e comportamental, desde
+                    o início a postura precisa ser diferente.
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div className="border-b border-b-gray-600 text-white text-md font-light pr-10 h-28 flex flex-col justify-center border-r-4 border-r-pink-500">
+                  <h1>Dia 15/12/2023</h1>
+                  <span className="text-sm font-extralight opacity-60">
+                    das 15:00 às 16:00
+                  </span>
+                </div>
+
+                <div className="flex-1 border-b border-gray-600 pl-10 h-28 flex items-center text-white/80">
+                  <h1>
+                    O foco é explicar de maneira humana o que precisamos buscar
+                    e focar para chegar em um nível de liderança na área de
+                    tecnologia (seja lá qual cargo for), não basta ser bom no
+                    técnico, precisa ter foco no pessoal e comportamental, desde
+                    o início a postura precisa ser diferente.
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div className="border-b border-b-gray-600 text-white text-md font-light pr-10 h-28 flex flex-col justify-center border-r-4 border-r-pink-500">
+                  <h1>Dia 15/12/2023</h1>
+                  <span className="text-sm font-extralight opacity-60">
+                    das 15:00 às 16:00
+                  </span>
+                </div>
+
+                <div className="flex-1 border-b border-gray-600 pl-10 h-28 flex items-center text-white/80">
+                  <h1>
+                    O foco é explicar de maneira humana o que precisamos buscar
+                    e focar para chegar em um nível de liderança na área de
+                    tecnologia (seja lá qual cargo for), não basta ser bom no
+                    técnico, precisa ter foco no pessoal e comportamental, desde
+                    o início a postura precisa ser diferente.
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-10 ">
+            <h1 className="text-white text-xl font-light flex items-center gap-2">
+              <img
+                src="/favicon.svg"
+                className="w-10"
+                alt="Logo do Nerdzão Day"
+              />
+              #Apoiadores oficiais
+            </h1>
+            <Swiper
+              className="w-full mt-5"
+              spaceBetween={20}
+              slidesPerView={3}
+              modules={[Autoplay, Pagination]}
+              autoplay={{
+                delay: 8000,
+                disableOnInteraction: false,
+              }}
+              pagination
+            >
+              <SwiperSlide>
+                <div className="bg-gray-800 h-[200px] max-h-[200px] flex items-center justify-center px-10 rounded-xl border-4 border-gray-600">
+                  <img src="/logo.svg" alt="Logo do Nerdzão Day" />
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="bg-gray-800 h-[200px] max-h-[200px] flex items-center justify-center px-10 rounded-xl border-4 border-gray-600">
+                  <img src="/logo.svg" alt="Logo do Nerdzão Day" />
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="bg-gray-800 h-[200px] max-h-[200px] flex items-center justify-center px-10 rounded-xl border-4 border-gray-600">
+                  <img src="/logo.svg" alt="Logo do Nerdzão Day" />
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="bg-gray-800 h-[200px] max-h-[200px] flex items-center justify-center px-10 rounded-xl border-4 border-gray-600">
+                  <img src="/logo.svg" alt="Logo do Nerdzão Day" />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-gray-opacity bg-about bg-top bg-cover bg-no-repeat">
+        <Divider />
+
+        <div className="max-w-6xl mx-auto px-8 py-20 flex flex-col">a</div>
       </section>
     </>
   );
